@@ -23,28 +23,28 @@ This repository is structured to:
 
 ## Theoretical background: Black-Scholes Model
 
-The **Black-Scholes model** assumes the price of a stock \( S(t) \) follows a geometric Brownian motion under the risk-neutral measure:
+The **Black-Scholes model** assumes the price of a stock $S(t)$ follows a geometric Brownian motion under the risk-neutral measure:
 
-\[
+$$
 dS_t = r S_t \,dt + \sigma S_t \,dW_t
-\]
+$$
 
 where:
-- \( r \) is the risk-free interest rate
-- \( \sigma \) is the volatility
-- \( W_t \) is a standard Brownian motion
+- $r$ is the risk-free interest rate
+- $\sigma$ is the volatility
+- $W_t$ is a standard Brownian motion
 
-The price of a European call option \( C(t, S) \) satisfies the **Black-Scholes PDE**:
+The price of a European call option $C(t, S) $ satisfies the **Black-Scholes PDE**:
 
-\[
+$$
 \frac{\partial C}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 C}{\partial S^2} + r S \frac{\partial C}{\partial S} - r C = 0
-\]
+$$
 
 with terminal condition:
 
-\[
+$$
 C(T, S) = \max(S - K, 0)
-\]
+$$
 
 ---
 
@@ -54,14 +54,14 @@ C(T, S) = \max(S - K, 0)
 
 We use risk-neutral valuation:
 
-\[
+$$
 C_0 = e^{-rT} \mathbb{E}^\mathbb{Q}[\max(S_T - K, 0)]
-\]
+$$
 
 Simulated using:
 
 - Standard Monte Carlo
-- **Antithetic Variates**: use \( Z \) and \( -Z \) to reduce variance
+- **Antithetic Variates**: use $Z$ and $-Z$ to reduce variance
 - **Control Variates**: use known analytical solutions to reduce error
 - **Stratified Sampling**: divide the sampling space for lower variance
 
@@ -78,13 +78,13 @@ We discretize the Black-Scholes PDE using:
 #### American Options
 We solve a **Linear Complementarity Problem (LCP)**:
 
-\[
+$$
 \begin{cases}
 V \geq f \\
 A V \geq b \\
 (V - f)^T (A V - b) = 0
 \end{cases}
-\]
+$$
 
 using a **Projected Successive Over-Relaxation (PSOR)** algorithm.
 
@@ -92,22 +92,22 @@ using a **Projected Successive Over-Relaxation (PSOR)** algorithm.
 
 ### 3. SDE Simulation
 
-Simulate paths of \( S(t) \) under the SDE:
+Simulate paths of $S(t)$ under the SDE:
 
-\[
+$$
 dS_t = r S_t dt + \sigma S_t dW_t
-\]
+$$
 
 Using:
 
 - **Euler-Maruyama**
 - **Milstein Method** (improved accuracy)
 
-Compare simulated \( S_T \) distribution with theoretical **log-normal PDF**:
+Compare simulated $S_T$ distribution with theoretical **log-normal PDF**:
 
-\[
+$$
 S_T \sim \text{LogNormal}\left(\log S_0 + (r - \frac{1}{2} \sigma^2) T, \sigma^2 T \right)
-\]
+$$
 
 ---
 
@@ -115,21 +115,21 @@ S_T \sim \text{LogNormal}\left(\log S_0 + (r - \frac{1}{2} \sigma^2) T, \sigma^2
 
 #### Heston Model (Stochastic Volatility):
 
-\[
+$$
 \begin{aligned}
 dS_t &= \mu S_t dt + \sqrt{v_t} S_t dW_t^S \\\\
 dv_t &= \kappa (\theta - v_t) dt + \xi \sqrt{v_t} dW_t^v
 \end{aligned}
-\]
+$$
 
 - Volatility becomes a stochastic process
 - Captures **volatility smiles** and **leverage effects**
 
 #### Merton Jump-Diffusion Model:
 
-\[
+$$
 dS_t = (\mu - \lambda k) S_t dt + \sigma S_t dW_t + S_{t-} dJ_t
-\]
+$$
 
 - Jumps modeled with **Poisson process**
 - Captures **sudden price changes** (earnings, news shocks)
