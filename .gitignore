@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Logs or temp data
+*.log
+*.tmp
