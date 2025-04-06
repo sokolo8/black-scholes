@@ -1,4 +1,4 @@
-# Advanced Numerical Simulations for Black-Scholes and Beyond **EXPECTED TO BE FINISHED till ~7.april**
+# Advanced Numerical Simulations for Black-Scholes and Beyond **STILL IPMROVING THE PROJECT**
 
 This project is a comprehensive and modular Python framework for simulating and analyzing financial derivatives under the **Black-Scholes model** and its **advanced generalizations** such as the **Heston stochastic volatility** model and the **Merton jump-diffusion** model.
 It is aimed at practitioners and researchers in **quantitative finance**, **financial engineering**, and **computational physics**, and was designed as part of a transition from theoretical physics into **quantitative risk analysis**.
