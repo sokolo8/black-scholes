@@ -5,7 +5,8 @@ It is aimed at practitioners and researchers in **quantitative finance**, **fina
 
 ---
 
-## Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
+## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
+## Part 1: [CLICK HERE 🔗](./docs/part1.ipynb)
 
 ---
 
