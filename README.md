@@ -1,13 +1,14 @@
-# Advanced Numerical Simulations for Black-Scholes and Beyond **STILL IPMROVING THE PROJECT**
+# Advanced Numerical Simulations for Black-Scholes and Beyond **(STILL IPMROVING)**
 
-This project is a comprehensive and modular Python framework for simulating and analyzing financial derivatives under the **Black-Scholes model** and its **advanced generalizations** such as the **Heston stochastic volatility** model and the **Merton jump-diffusion** model.
-It is aimed at practitioners and researchers in **quantitative finance**, **financial engineering**, and **computational physics**, and was designed as part of a transition from theoretical physics into **quantitative risk analysis**.
+This project is a comprehensive and modular Python framework for simulating and analyzing financial derivatives under the **Black-Scholes model**.
+This repository was created as part of a transition from theoretical physics into **quantitative risk analysis**.
 
 ---
 
-## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
 ## Part 1: [CLICK HERE 🔗](./docs/part1.ipynb)
 ## Part 2: [CLICK HERE 🔗](./docs/part2.ipynb)
+
+## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
 
 ---
 
@@ -18,8 +19,8 @@ This repository is structured to:
 - Implement **advanced numerical methods**: Monte Carlo, PDE-based, and SDE simulations
 - Explore **variance reduction techniques**
 - Extend to **American options** using free boundary solvers
-- Simulate **stochastic volatility** and **jumps**
-- Provide a strong foundation for **model calibration**
+- Simulate **stochastic volatility** and **jumps** (to do)
+- Provide a strong foundation for **model calibration** (to do)
 
 ---
 
@@ -45,19 +46,19 @@ $$
 with terminal condition:
 
 $$
-C(T, S) = \max(S - K, 0)
+C(T, S) = \max(S - X, 0)
 $$
 
 ---
 
 ## Numerical Methods Implemented
 
-### 1. Monte Carlo Simulation
+### 1. Monte Carlo Simulation (done)
 
 We use risk-neutral valuation:
 
 $$
-C_0 = e^{-rT} \mathbb{E}^\mathbb{Q}[\max(S_T - K, 0)]
+C_0 = e^{-rT} \mathbb{E}^\mathbb{Q}[\max(S_T - X, 0)]
 $$
 
 Simulated using:
@@ -69,7 +70,7 @@ Simulated using:
 
 ---
 
-### 2. Finite Difference Methods (PDE Solvers)
+### 2. Finite Difference Methods (PDE Solvers) (done)
 
 We discretize the Black-Scholes PDE using:
 
@@ -92,7 +93,7 @@ using a **Projected Successive Over-Relaxation (PSOR)** algorithm.
 
 ---
 
-### 3. SDE Simulation
+### 3. SDE Simulation (to do)
 
 Simulate paths of $S(t)$ under the SDE:
 
@@ -113,7 +114,7 @@ $$
 
 ---
 
-### 4. Advanced Models
+### 4. Advanced Models (to do)
 
 #### Heston Model (Stochastic Volatility):
 
@@ -142,21 +143,38 @@ $$
 
 ```bash
 bs-numerical-simulations/
-├── src/
-│   ├── monte_carlo/            # Monte Carlo and variance reduction
-│   ├── finite_difference/      # PDE solvers: Explicit, Implicit, CN, PSOR
-│   ├── sde_simulation/         # SDE path simulation (Euler, Milstein)
-│   ├── advanced_models/        # Heston and Merton simulation
-│   └── utils/                  # Helpers, Black-Scholes formula
-│
-├── notebooks/                  # Theory and documentation notebooks
-│   ├── black_scholes_theory_intro.ipynb
-│   ├── monte_carlo_option_pricing_theory.ipynb
-│   ├── fdm_black_scholes_theory.ipynb
-│   ├── psor_theory_american_options.ipynb
-│   ├── sde_simulation_theory.ipynb
-│   └── heston_merton_models_theory.ipynb
-│
+├── LICENSE
 ├── README.md
+├── black_scholes
+│   ├── __init__.py
+│   ├── fdm
+│   │   └── finite_diff_methods.py
+│   ├── mc
+│   │   ├── __init__.py
+│   │   └── monte_carlo.py
+│   └── qmc
+│       ├── __init__.py
+│       └── quasi_monte_carlo.py
+├── data
+│   ├── mc_results_call.csv
+│   └── mc_results_put.csv
+├── docs
+│   ├── documentation.ipynb
+│   ├── figures
+│   │   ├── mc_results_abs_err_call.svg
+│   │   ├── mc_results_abs_err_put.svg
+│   │   ├── mc_results_std_err_call.svg
+│   │   └── mc_results_std_err_put.svg
+│   ├── part1.ipynb
+│   └── part2.ipynb
+├── plots
+│   ├── mc_results_abs_err_call.pdf
+│   ├── mc_results_abs_err_put.pdf
+│   ├── mc_results_std_err_call.pdf
+│   └── mc_results_std_err_put.pdf
 ├── requirements.txt
-└── LICENSE
+├── scripts
+│   ├── generate_data.py
+│   ├── mc_plot_results_abs_err.py
+│   └── mc_plot_results_std_err.py
+└── setup.py
