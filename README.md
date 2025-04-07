@@ -5,8 +5,8 @@ This repository was created as part of a transition from theoretical physics int
 
 ---
 
-## Part 1: [CLICK HERE 🔗](./docs/part1.ipynb)
-## Part 2: [CLICK HERE 🔗](./docs/part2.ipynb)
+## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/part1.ipynb)
+## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/part2.ipynb)
 
 ## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
 
@@ -53,7 +53,7 @@ $$
 
 ## Numerical Methods Implemented
 
-### 1. Monte Carlo Simulation (done)
+### 1. Monte Carlo Simulation [(done) 🔗](./docs/part1.ipynb)
 
 We use risk-neutral valuation:
 
@@ -70,7 +70,7 @@ Simulated using:
 
 ---
 
-### 2. Finite Difference Methods (PDE Solvers) (done)
+### 2. Finite Difference Methods (PDE Solvers) [(done) 🔗](./docs/part2.ipynb)
 
 We discretize the Black-Scholes PDE using:
 
