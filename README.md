@@ -1,7 +1,7 @@
 # Advanced Numerical Simulations for Black-Scholes and Beyond **(STILL IPMROVING)**
 
 This project is a comprehensive and modular Python framework for simulating and analyzing financial derivatives under the **Black-Scholes model**.
-This repository was created as part of a transition from theoretical physics into **quantitative risk analysis**.
+This repository was created as part of a transition from theoretical physics into quantitative finance.
 
 ---
 
