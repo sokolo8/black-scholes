@@ -37,7 +37,7 @@ where:
 - $\sigma$ is the volatility
 - $W_t$ is a standard Brownian motion
 
-The price of a European call option $C(t, S) $ satisfies the **Black-Scholes PDE**:
+The price of a European call option $C(t, S)$ satisfies the **Black-Scholes PDE**:
 
 $$
 \frac{\partial C}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 C}{\partial S^2} + r S \frac{\partial C}{\partial S} - r C = 0
