@@ -3,17 +3,6 @@ from scipy.stats import norm
 from scipy.sparse import lil_matrix, csc_matrix
 from scipy.sparse.linalg import spsolve
 
-# Parameters
-S_max = 200
-X = 100
-T = 1.0
-r = 0.05
-sigma = 0.2
-call_or_put = "call"
-
-M = 100
-N = 1000
-
 def analytical_european_options(S0, X, T, r, sigma, call_or_put="call"):
 
     d1 = (np.log(S0 / X + 1e-10) + (r + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
@@ -270,3 +259,55 @@ def implicit_psor_american_options(S_max, X, T, r, sigma, M, N, call_or_put="cal
             raise ValueError("Invalid option type. Use 'call' or 'put'.")
         
     return V
+
+def solve_fd(method, S_max, X, T, r, sigma, M, N, call_or_put="call"):
+    S = np.linspace(0, S_max, M+1)
+
+    V_exact = analytical_european_options(S, X, T, r, sigma, call_or_put=call_or_put)
+
+    if method == "explicit_european":
+        V = explicit_european_options(S_max, X, T, r, sigma, M, N, call_or_put=call_or_put)
+        return V, abs(V - V_exact)
+    elif method == "implicit_european":
+        V = implicit_european_options(S_max, X, T, r, sigma, M, N, call_or_put=call_or_put)
+        return V, abs(V - V_exact)
+    elif method == "crank_european":
+        V = crank_nicolson_european_options(S_max, X, T, r, sigma, M, N, call_or_put=call_or_put)
+        return V, abs(V - V_exact)
+    elif method == "explicit_american":
+        return explicit_american_options(S_max, X, T, r, sigma, M, N, call_or_put=call_or_put)
+    elif method == "implicit_psor_american":
+        return implicit_psor_american_options(S_max, X, T, r, sigma, M, N, call_or_put=call_or_put)
+    else:
+        raise ValueError(f"Unknown method: {method}")
+
+
+if __name__ == '__main__':
+
+    import matplotlib.pyplot as plt
+
+    # Parameters
+    S_max = 200
+    X = 100
+    T = 1.0
+    r = 0.05
+    sigma = 0.2
+    call_or_put = "call"
+
+    M = 100
+    N = 1000
+
+    S = np.linspace(0, S_max, M+1)
+
+    V, _ = solve_fd("implicit_european", S_max, X, T, r, sigma, M, N, call_or_put=call_or_put)
+    V_exact = analytical_european_options(S, X, T, r, sigma, call_or_put=call_or_put)
+
+    plt.figure(figsize=(9, 5))
+    plt.plot(S, V, label='FDM (Implicit), European', linewidth=2)
+    plt.plot(S, V_exact, '--', label='Analytical, European', linewidth=2)
+    plt.xlabel('Asset Price $S$')
+    plt.ylabel('Option Value $V(S, 0)$')
+    plt.title(f'European Option vs. European (B-S) — {call_or_put.capitalize()}')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
