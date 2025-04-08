@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import norm
 
-# Standard Monte Carlo Technique Start from random sampling from N(0, 1)
+# Standard Monte Carlo Technique
 
 def standard_mc(N, S0, X, T, r, sigma, call_or_put="call"):
 
