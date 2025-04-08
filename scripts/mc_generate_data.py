@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 from black_scholes import analytical_european_options
 from black_scholes.mc import standard_mc, antithetic_variates_mc, control_variates_mc, stratified_sampling_mc
