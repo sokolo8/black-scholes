@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator, NullFormatter
-from sklearn.linear_model import LinearRegression
 import pandas as pd
 
 call_or_put = "put"

@@ -1,16 +1,15 @@
 import numpy as np
 from scipy.stats import norm
 
-
-def midpoint_rule_qmc(N, S0, X, T, r, sigma, which="call"):
+def midpoint_rule_qmc(N, S0, X, T, r, sigma, call_or_put="call"):
 
     U = (np.arange(N) + 0.5) / N
     Z = norm.ppf(U)
     ST = S0 * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)
 
-    if which == "call":
+    if call_or_put == "call":
         discounted_payoffs = np.exp(-r * T) * np.maximum(ST - X, 0)
-    elif which == "put":
+    elif call_or_put == "put":
         discounted_payoffs = np.exp(-r * T) * np.maximum(X - ST, 0)
     else:
         raise ValueError("Invalid option type. Use 'call' or 'put'.")

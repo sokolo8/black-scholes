@@ -1,8 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import norm
 import pandas as pd
-from black_scholes.mc import black_scholes_european_options
+from black_scholes import analytical_european_options
 from black_scholes.mc import standard_mc, antithetic_variates_mc, control_variates_mc, stratified_sampling_mc
 from black_scholes.qmc import midpoint_rule_qmc
 
@@ -16,7 +15,7 @@ sigma = 0.2   # Volatility
 call_or_put = "call"
 N_values = [int(1.1 ** i) for i in range(90, 190)]    # Number of Monte Carlo simulations
 
-bs_price = black_scholes_european_options(S0, X, T, r, sigma, which=call_or_put)
+bs_price = analytical_european_options(S0, X, T, r, sigma, call_or_put=call_or_put)
 
 results = {
     "N": [], 
@@ -40,11 +39,11 @@ for N in N_values:
 
     print(f"N = {int(np.log(N) / np.log(1.1))}") # Control code execution
 
-    std_mc_price, std_mc_err  = standard_mc(N, S0, X, T, r, sigma, which=call_or_put)
-    antith_mc_price, antith_mc_err = antithetic_variates_mc(N, S0, X, T, r, sigma, which=call_or_put)
-    control_mc_price, control_mc_err = control_variates_mc(N, S0, X, T, r, sigma, which=call_or_put)
-    strat_mc_price, strat_mc_err = stratified_sampling_mc(N, S0, X, T, r, sigma, which=call_or_put)
-    midpoint_rule_qmc_price = midpoint_rule_qmc(N, S0, X, T, r, sigma, which=call_or_put)
+    std_mc_price, std_mc_err  = standard_mc(N, S0, X, T, r, sigma, call_or_put=call_or_put)
+    antith_mc_price, antith_mc_err = antithetic_variates_mc(N, S0, X, T, r, sigma, call_or_put=call_or_put)
+    control_mc_price, control_mc_err = control_variates_mc(N, S0, X, T, r, sigma, call_or_put=call_or_put)
+    strat_mc_price, strat_mc_err = stratified_sampling_mc(N, S0, X, T, r, sigma, call_or_put=call_or_put)
+    midpoint_rule_qmc_price = midpoint_rule_qmc(N, S0, X, T, r, sigma, call_or_put=call_or_put)
 
     std_mc_abs_err = abs(bs_price - std_mc_price)
     antith_mc_abs_err = abs(bs_price - antith_mc_price)
