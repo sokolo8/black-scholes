@@ -292,7 +292,7 @@ if __name__ == '__main__':
     T = 1.0
     r = 0.05
     sigma = 0.2
-    call_or_put = "call"
+    call_or_put = "put"
 
     M = 100
     N = 1000
