@@ -57,7 +57,7 @@ def explicit_european_options(S_max, X, T, r, sigma, M, N, call_or_put="call"):
 def implicit_european_options(S_max, X, T, r, sigma, M, N, call_or_put="call"):
 
     dt = T / N
-    S = np.linspace(0, S_max, M+1, endpoint=True)
+    S = np.linspace(0, S_max, M+1)
 
     if call_or_put == "call":
         V = np.maximum(S - X, 0)

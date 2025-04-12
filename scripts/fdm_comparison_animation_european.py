@@ -36,8 +36,6 @@ for sigma in sigma_values:
 
 df = pd.DataFrame(data)
 
-x = np.linspace(0, S_max, M+1)
-
 mpl.rcParams['text.usetex'] = True
 mpl.rcParams['font.family'] = 'serif'
 
@@ -67,7 +65,7 @@ line_imp, = ax.plot([], [], label='Implicit')
 line_cn,  = ax.plot([], [], label='Crank-Nicolson')
 title = ax.set_title("")
 
-ax.set_xlim(x.min(), x.max())
+ax.set_xlim(S.min(), S.max())
 ax.set_ylim(0, max(np.max(np.abs(df["error_explicit"].iloc[0])),
                   np.max(np.abs(df["error_implicit"].iloc[0])),
                   np.max(np.abs(df["error_cn"].iloc[0]))) * 1.2)
@@ -87,9 +85,9 @@ def update(frame):
     error_im = row["error_implicit"]
     error_cn = row["error_cn"]
 
-    line_exp.set_data(x, np.abs(error_ex))
-    line_imp.set_data(x, np.abs(error_im))
-    line_cn.set_data(x, np.abs(error_cn))
+    line_exp.set_data(S, np.abs(error_ex))
+    line_imp.set_data(S, np.abs(error_im))
+    line_cn.set_data(S, np.abs(error_cn))
 
     if call_or_put == "put":
         title.set_text(r'European Put' + rf'\;\;$X={X}$, $T={T}$, $r={r}$, $\sigma={sigma:.2f}$')
