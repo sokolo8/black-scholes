@@ -142,12 +142,13 @@ $$
 ## Directory Structure
 
 ```bash
-bs-numerical-simulations/
+black-scholes/
 ├── LICENSE
 ├── README.md
 ├── black_scholes
 │   ├── __init__.py
 │   ├── fdm
+│   │   ├── __init__.py
 │   │   └── finite_diff_methods.py
 │   ├── mc
 │   │   ├── __init__.py
@@ -161,6 +162,9 @@ bs-numerical-simulations/
 ├── docs
 │   ├── documentation.ipynb
 │   ├── figures
+│   │   ├── european_american_options_vs_sigma.gif
+│   │   ├── fdm_error_vs_sigma_call.gif
+│   │   ├── fdm_error_vs_sigma_put.gif
 │   │   ├── mc_results_abs_err_call.svg
 │   │   ├── mc_results_abs_err_put.svg
 │   │   ├── mc_results_std_err_call.svg
@@ -168,13 +172,20 @@ bs-numerical-simulations/
 │   ├── part1.ipynb
 │   └── part2.ipynb
 ├── plots
+│   ├── animations
+│   │   ├── european_american_options_vs_sigma.mp4
+│   │   ├── european_options_vs_sigma_exact.mp4
+│   │   ├── fdm_error_vs_sigma_call.mp4
+│   │   └── fdm_error_vs_sigma_put.mp4
 │   ├── mc_results_abs_err_call.pdf
 │   ├── mc_results_abs_err_put.pdf
 │   ├── mc_results_std_err_call.pdf
 │   └── mc_results_std_err_put.pdf
 ├── requirements.txt
 ├── scripts
-│   ├── generate_data.py
+│   ├── european_american_options_vs_volatility_animation.py
+│   ├── fdm_comparison_animation_european.py
+│   ├── mc_generate_data.py
 │   ├── mc_plot_results_abs_err.py
 │   └── mc_plot_results_std_err.py
 └── setup.py
