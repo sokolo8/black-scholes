@@ -7,6 +7,7 @@ This repository was created as part of a transition from theoretical physics int
 
 ## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/part1.ipynb)
 ## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/part2.ipynb)
+## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/part3.ipynb)
 
 ## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
 
@@ -93,7 +94,7 @@ using a **Projected Successive Over-Relaxation (PSOR)** algorithm.
 
 ---
 
-### 3. SDE Simulation (to do)
+### 3. SDE Simulation [(done) 🔗](./docs/part3.ipynb)
 
 Simulate paths of $S(t)$ under the SDE:
 
@@ -155,7 +156,6 @@ black-scholes/
 │   │   └── monte_carlo.py
 │   └── qmc
 │       ├── __init__.py
-│       └── quasi_monte_carlo.py
 ├── data
 │   ├── mc_results_call.csv
 │   └── mc_results_put.csv
@@ -170,7 +170,8 @@ black-scholes/
 │   │   ├── mc_results_std_err_call.svg
 │   │   └── mc_results_std_err_put.svg
 │   ├── part1.ipynb
-│   └── part2.ipynb
+│   ├── part2.ipynb
+│   └── part3.ipynb
 ├── plots
 │   ├── animations
 │   │   ├── european_american_options_vs_sigma.mp4
