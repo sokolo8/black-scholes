@@ -10,8 +10,6 @@ This repository was created as part of a transition from theoretical physics int
 ## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/part3.ipynb)
 ## Extensions of B-S Model Notebook: [CLICK HERE 🔗](./docs/part4.ipynb)
 
-## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
-
 ---
 
 ## Overview
