@@ -8,6 +8,7 @@ This repository was created as part of a transition from theoretical physics int
 ## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/part1.ipynb)
 ## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/part2.ipynb)
 ## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/part3.ipynb)
+## Extensions of B-S Model Notebook: [CLICK HERE 🔗](./docs/part4.ipynb)
 
 ## Full Documentation: [CLICK HERE 🔗](./docs/documentation.ipynb)
 
@@ -115,7 +116,7 @@ $$
 
 ---
 
-### 4. Advanced Models (to do)
+### 4. Advanced Models [(done) 🔗](./docs/part4.ipynb)
 
 #### Heston Model (Stochastic Volatility):
 
@@ -171,7 +172,8 @@ black-scholes/
 │   │   └── mc_results_std_err_put.svg
 │   ├── part1.ipynb
 │   ├── part2.ipynb
-│   └── part3.ipynb
+│   ├── part3.ipynb
+│   └── part4.ipynb
 ├── plots
 │   ├── animations
 │   │   ├── european_american_options_vs_sigma.mp4
