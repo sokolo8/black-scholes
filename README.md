@@ -128,7 +128,7 @@ $$
 - Volatility becomes a stochastic process
 - Captures **volatility smiles** and **leverage effects**
 
-#### Merton Jump-Diffusion Model:
+#### Merton Jump-Diffusion Model: (to do)
 
 $$
 dS_t = (\mu - \lambda k) S_t dt + \sigma S_t dW_t + S_{t-} dJ_t
