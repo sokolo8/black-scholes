@@ -19,7 +19,7 @@ This repository is structured to:
 - Implement **advanced numerical methods**: Monte Carlo, PDE-based, and SDE simulations
 - Explore **variance reduction techniques**
 - Extend to **American options** using free boundary solvers
-- Simulate **stochastic volatility** and **jumps** (to do)
+- Simulate **stochastic volatility**
 - Provide a strong foundation for **model calibration** (to do)
 
 ---
