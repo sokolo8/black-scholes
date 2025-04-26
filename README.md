@@ -5,10 +5,11 @@ This repository was created as part of a transition from theoretical physics int
 
 ---
 
-## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/part1.ipynb)
-## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/part2.ipynb)
-## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/part3.ipynb)
-## Extensions of B-S Model Notebook: [CLICK HERE 🔗](./docs/part4.ipynb)
+## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/mc.ipynb)
+## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/fdm.ipynb)
+## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/gbm.ipynb)
+## Extensions of B-S Model Notebook: [CLICK HERE 🔗](./docs/heston.ipynb)
+## Calibration of Heston Model for S&P 500 (SPX) Options Notebook: [CLICK HERE 🔗](./docs/heston_calibration.ipynb)
 
 ---
 
@@ -53,7 +54,7 @@ $$
 
 ## Numerical Methods Implemented
 
-### 1. Monte Carlo Simulation [(done) 🔗](./docs/part1.ipynb)
+### 1. Monte Carlo Simulation [(done) 🔗](./docs/mc.ipynb)
 
 We use risk-neutral valuation:
 
@@ -70,7 +71,7 @@ Simulated using:
 
 ---
 
-### 2. Finite Difference Methods (PDE Solvers) [(done) 🔗](./docs/part2.ipynb)
+### 2. Finite Difference Methods (PDE Solvers) [(done) 🔗](./docs/fdm.ipynb)
 
 We discretize the Black-Scholes PDE using:
 
@@ -93,7 +94,7 @@ using a **Projected Successive Over-Relaxation (PSOR)** algorithm.
 
 ---
 
-### 3. SDE Simulation [(done) 🔗](./docs/part3.ipynb)
+### 3. SDE Simulation [(done) 🔗](./docs/gbm.ipynb)
 
 Simulate paths of $S(t)$ under the SDE:
 
@@ -114,9 +115,7 @@ $$
 
 ---
 
-### 4. Advanced Models [(done) 🔗](./docs/part4.ipynb)
-
-#### Heston Model (Stochastic Volatility):
+### 4.1 Heston Model (Stochastic Volatility) [(done) 🔗](./docs/heston.ipynb)
 
 $$
 \begin{aligned}
@@ -128,7 +127,10 @@ $$
 - Volatility becomes a stochastic process
 - Captures **volatility smiles** and **leverage effects**
 
-#### Merton Jump-Diffusion Model: (to do)
+### 4.2 Calibration of Heston Model for S&P 500 (SPX Options) [(done) 🔗](./docs/heston_calibration.ipynb)
+
+
+### 5 Merton Jump-Diffusion Model: (to do)
 
 $$
 dS_t = (\mu - \lambda k) S_t dt + \sigma S_t dW_t + S_{t-} dJ_t
@@ -155,23 +157,29 @@ black-scholes/
 │   │   └── monte_carlo.py
 │   └── qmc
 │       ├── __init__.py
+│       └── quasi_monte_carlo.py
 ├── data
 │   ├── mc_results_call.csv
 │   └── mc_results_put.csv
 ├── docs
+│   ├── data
+│   │   └── spx_quotedata.csv
 │   ├── documentation.ipynb
+│   ├── fdm.ipynb
 │   ├── figures
 │   │   ├── european_american_options_vs_sigma.gif
 │   │   ├── fdm_error_vs_sigma_call.gif
 │   │   ├── fdm_error_vs_sigma_put.gif
+│   │   ├── heston_calibration.png
 │   │   ├── mc_results_abs_err_call.svg
 │   │   ├── mc_results_abs_err_put.svg
 │   │   ├── mc_results_std_err_call.svg
-│   │   └── mc_results_std_err_put.svg
-│   ├── part1.ipynb
-│   ├── part2.ipynb
-│   ├── part3.ipynb
-│   └── part4.ipynb
+│   │   ├── mc_results_std_err_put.svg
+│   │   └── vix.png
+│   ├── gbm.ipynb
+│   ├── heston.ipynb
+│   ├── heston_calibration.ipynb
+│   └── mc.ipynb
 ├── plots
 │   ├── animations
 │   │   ├── european_american_options_vs_sigma.mp4
