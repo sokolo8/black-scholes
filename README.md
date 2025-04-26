@@ -21,7 +21,7 @@ This repository is structured to:
 - Explore **variance reduction techniques**
 - Extend to **American options** using free boundary solvers
 - Simulate **stochastic volatility**
-- Provide a strong foundation for **model calibration** (to do)
+- Calibration of Heston model
 
 ---
 
