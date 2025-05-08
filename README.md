@@ -65,10 +65,11 @@ $$
 
 Simulated using:
 
-- Standard Monte Carlo
+- **Standard Monte Carlo**
 - **Antithetic Variates**: use $Z$ and $-Z$ to reduce variance
 - **Control Variates**: use known analytical solutions to reduce error
 - **Stratified Sampling**: divide the sampling space for lower variance
+- **Quasi Monte Carlo**: quadratic advantage in convergence rate over standard MC
 
 ---
 
