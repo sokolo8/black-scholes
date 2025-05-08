@@ -130,7 +130,9 @@ $$
 ### 4.2 Calibration of Heston Model for S&P 500 (SPX Options) [(done) 🔗](./docs/heston_calibration.ipynb)
 
 
-### 5 Merton Jump-Diffusion Model: (to do)
+### 5.1 Merton Jump-Diffusion Model and Bates's Stochastic Volatility Jumps Diffusion (SVJD) model [(done) 🔗](./docs/merton_and_bates.ipynb)
+
+**Merton**
 
 $$
 dS_t = (\mu - \lambda k) S_t dt + \sigma S_t dW_t + S_{t-} dJ_t
@@ -138,6 +140,20 @@ $$
 
 - Jumps modeled with **Poisson process**
 - Captures **sudden price changes** (earnings, news shocks)
+- Explains fat tails
+
+**SVJD**
+
+$$
+\begin{cases}
+dS_t / S_t = (\mu - \lambda k)\, dt + \sqrt{\nu_t} \, dW_t^S + \left(\prod_{j=1}^{dN_t}Y_j - 1 \right)\\
+d\nu_t = \kappa (\theta - v_t) \, dt + \xi \sqrt{\nu_t} \, dW_t^v\\
+dW_t^S \cdot dW_t^v = \rho \, dt\\
+P\left(dN_t=1\right) = \lambda dt
+\end{cases}
+$$
+
+- Combines Heston stochastic volatility model with sudden jumps modeled by Merton
 
 ---
 
@@ -157,7 +173,6 @@ black-scholes/
 │   │   └── monte_carlo.py
 │   └── qmc
 │       ├── __init__.py
-│       └── quasi_monte_carlo.py
 ├── data
 │   ├── mc_results_call.csv
 │   └── mc_results_put.csv
@@ -170,7 +185,8 @@ black-scholes/
 │   │   ├── european_american_options_vs_sigma.gif
 │   │   ├── fdm_error_vs_sigma_call.gif
 │   │   ├── fdm_error_vs_sigma_put.gif
-│   │   ├── heston_calibration.png
+│   │   ├── heston_calibr.png
+│   │   ├── log-SPX-retn-vs-normal.jpg
 │   │   ├── mc_results_abs_err_call.svg
 │   │   ├── mc_results_abs_err_put.svg
 │   │   ├── mc_results_std_err_call.svg
@@ -179,7 +195,10 @@ black-scholes/
 │   ├── gbm.ipynb
 │   ├── heston.ipynb
 │   ├── heston_calibration.ipynb
-│   └── mc.ipynb
+│   ├── iframe_figures
+│   │   └── figure_345.html
+│   ├── mc.ipynb
+│   └── merton_and_bates.ipynb
 ├── plots
 │   ├── animations
 │   │   ├── european_american_options_vs_sigma.mp4
