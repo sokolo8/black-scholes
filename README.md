@@ -8,7 +8,8 @@ This repository was created as part of a transition from theoretical physics int
 ## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/mc.ipynb)
 ## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/fdm.ipynb)
 ## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/gbm.ipynb)
-## Extensions of B-S Model Notebook: [CLICK HERE 🔗](./docs/heston.ipynb)
+## Extensions of B-S Model Notebook 1: [CLICK HERE 🔗](./docs/heston.ipynb)
+## Extensions of B-S Model Notebook 2: [CLICK HERE 🔗](./docs/merton_and_bates.ipynb)
 ## Calibration of Heston Model for S&P 500 (SPX) Options Notebook: [CLICK HERE 🔗](./docs/heston_calibration.ipynb)
 
 ---
@@ -129,10 +130,11 @@ $$
 
 ### 4.2 Calibration of Heston Model for S&P 500 (SPX Options) [(done) 🔗](./docs/heston_calibration.ipynb)
 
+---
 
-### 5.1 Merton Jump-Diffusion Model and Bates's Stochastic Volatility Jumps Diffusion (SVJD) model [(done) 🔗](./docs/merton_and_bates.ipynb)
+### 5 Jump-diffusion models (Merton and Bates) [(done) 🔗](./docs/merton_and_bates.ipynb)
 
-**Merton**
+#### 5.1 Merton model
 
 $$
 dS_t = (\mu - \lambda k) S_t dt + \sigma S_t dW_t + S_{t-} dJ_t
@@ -142,7 +144,7 @@ $$
 - Captures **sudden price changes** (earnings, news shocks)
 - Explains fat tails
 
-**SVJD**
+#### 5.2 Bates Stochastic Volatility Jump Diffusion (SVJD) model
 
 $$
 \begin{cases}
