@@ -1,28 +1,28 @@
 # Advanced Numerical Simulations for Black-Scholes and Beyond
 
-This project is a comprehensive and modular Python framework for simulating and analyzing financial derivatives under the **Black-Scholes model**.
-This repository was created as part of a transition from theoretical physics into quantitative finance.
+This project is a comprehensive and modular Python framework for simulating and analyzing financial derivatives under the **Black-Scholes model** and its extensions.
+This repository was created as part of a transition from **theoretical physics** into **quantitative finance**.
 
 ---
 
-## Monte Carlo Notebook: [CLICK HERE 🔗](./docs/mc.ipynb)
-## Finite Difference Methods Notebook: [CLICK HERE 🔗](./docs/fdm.ipynb)
-## SDE Simulations Notebook: [CLICK HERE 🔗](./docs/gbm.ipynb)
-## Extensions of B-S Model Notebook 1: [CLICK HERE 🔗](./docs/heston.ipynb)
-## Extensions of B-S Model Notebook 2: [CLICK HERE 🔗](./docs/merton_and_bates.ipynb)
-## Calibration of Heston Model for S&P 500 (SPX) Options Notebook: [CLICK HERE 🔗](./docs/heston_calibration.ipynb)
+## Monte Carlo: [CLICK HERE 🔗](./docs/mc.ipynb)
+## Finite Difference Methods: [CLICK HERE 🔗](./docs/fdm.ipynb)
+## SDE Simulations: [CLICK HERE 🔗](./docs/gbm.ipynb)
+## Extensions of B-S Model: Stochastic Volatility: [CLICK HERE 🔗](./docs/heston.ipynb)
+## Extensions of B-S Model: Jump Diffusion plus SVJD: [CLICK HERE 🔗](./docs/merton_and_bates.ipynb)
+## Calibration of Heston Model for S&P 500 (SPX) Options: [CLICK HERE 🔗](./docs/heston_calibration.ipynb)
 
 ---
 
 ## Overview
 
 This repository is structured to:
-- Recreate and analyze the **Black-Scholes pricing model** from first principles
-- Implement **advanced numerical methods**: Monte Carlo, PDE-based, and SDE simulations
-- Explore **variance reduction techniques**
-- Extend to **American options** using free boundary solvers
-- Simulate **stochastic volatility**
-- Calibration of Heston model
+- Recreate and analyze the **Black-Scholes pricing model**
+- Implement **Monte Carlo methods**: standard MC, variance reduction techniques, quasi-MC
+- Implement **Finite difference methods**: Explicit, implicit, Crank-Nicolson
+- Extend to **American options** using free boundary solvers: Explicit, Implicit (with PSOR)
+- Simulate **stochastic volatility** under Heston model and calibrate it using historical data for SPX options
+- Simulate **jump-diffusion processes** under Merton and Bates models
 
 ---
 
@@ -63,8 +63,7 @@ $$
 C_0 = e^{-rT} \mathbb{E}^\mathbb{Q}[\max(S_T - X, 0)]
 $$
 
-Simulated using:
-
+Estimated using:
 - **Standard Monte Carlo**
 - **Antithetic Variates**: use $Z$ and $-Z$ to reduce variance
 - **Control Variates**: use known analytical solutions to reduce error
@@ -79,7 +78,7 @@ We discretize the Black-Scholes PDE using:
 
 - **Explicit Scheme** (conditionally stable)
 - **Implicit Scheme** (unconditionally stable)
-- **Crank-Nicolson Scheme** (second-order accurate)
+- **Crank-Nicolson Scheme** (unconditionally stable, second-order accurate)
 
 #### American Options
 We solve a **Linear Complementarity Problem (LCP)**:
@@ -107,7 +106,7 @@ $$
 Using:
 
 - **Euler-Maruyama**
-- **Milstein Method** (improved accuracy)
+- **Milstein Method**
 
 Compare simulated $S_T$ distribution with theoretical **log-normal PDF**:
 
