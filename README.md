@@ -150,7 +150,7 @@ $$
 \begin{cases}
 dS_t / S_t = (\mu - \lambda k)\, dt + \sqrt{\nu_t} \, dW_t^S + \left(\prod_{j=1}^{dN_t}Y_j - 1 \right)\\
 d\nu_t = \kappa (\theta - v_t) \, dt + \xi \sqrt{\nu_t} \, dW_t^v\\
-dW_t^S \cdot dW_t^v = \rho \, dt\\
+dW_t^S \cdot dW_t^v = \rho dt\\
 P\left(dN_t=1\right) = \lambda dt
 \end{cases}
 $$
