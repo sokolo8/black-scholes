@@ -10,7 +10,7 @@ This repository was created as part of a transition from **theoretical physics**
 ## SDE Simulations: [CLICK HERE 🔗](./docs/gbm.ipynb)
 ## Extensions of B-S Model: Stochastic Volatility: [CLICK HERE 🔗](./docs/heston.ipynb)
 ## Extensions of B-S Model: Jump Diffusion: [CLICK HERE 🔗](./docs/merton_and_bates.ipynb)
-## Calibration of Heston Model for S&P 500 (SPX) Options: [CLICK HERE 🔗](./docs/heston_calibration.ipynb)
+## Calibration of Heston Model for S&P 500 index Options: [CLICK HERE 🔗](./docs/heston_calibration.ipynb)
 
 ---
 
@@ -128,7 +128,7 @@ $$
 - Volatility becomes a stochastic process
 - Captures **volatility smiles** and **leverage effects**
 
-### 4.2 Calibration of Heston Model for S&P 500 (SPX Options) [(done) 🔗](./docs/heston_calibration.ipynb)
+### 4.2 Calibration of Heston Model for S&P 500 index options (SPX Options) [(done) 🔗](./docs/heston_calibration.ipynb)
 
 ---
 
