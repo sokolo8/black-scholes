@@ -21,7 +21,7 @@ This repository is structured to:
 - Implement **Monte Carlo methods**: standard MC, variance reduction techniques, quasi-MC
 - Implement **Finite difference methods**: Explicit, implicit, Crank-Nicolson
 - Extend to **American options** using free boundary solvers: Explicit, Implicit (with PSOR)
-- Simulate **stochastic volatility** under Heston model and calibrate it using historical data for SPX options
+- Simulate **stochastic volatility** under Heston model and calibrate it using market data for S&P 500 index options
 - Simulate **jump-diffusion processes** under Merton and Bates models
 
 ---
